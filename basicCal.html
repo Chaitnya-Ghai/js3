@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="firstNo"
+        placeholder="Enter a number"
+        type="number">
+
+        <input id="secondNo"
+        placeholder="Enter a number"
+        type="number">
+    </div>
+    <div >
+        <button onclick="calculate('+')">Add</button>
+        <button onclick="calculate('-')">Subtract</button>
+        <button onclick="calculate('/')">Divide</button>
+        <button onclick="calculate('*')">Multiply</button>
+        <button onclick="calculate('%')">Remainder</button>
+    </div>
+    
+    <div>
+        <input type="text"
+        id="result"
+        placeholder="Result">
+    </div>
+
+    <script>
+        function calculate(operator){
+            // console.log(operator);
+            var ans;
+            var a = document.getElementById("firstNo").value;
+            var b = document.getElementById("secondNo").value;
+            switch(operator){
+                case ('+'): ans= (Number(a)) + (Number(b));
+                break;
+                case('-'): ans= (Number(a)) - (Number(b));
+                break;
+                case('*'): ans=(Number(a)) * (Number(b));
+                break;
+                case('/'): ans=(Number(a)) / (Number(b));
+                break;
+                case('%'): ans=(Number(a)) % (Number(b));
+            }
+            console.log(ans)
+            document.getElementById('result').value= ans;
+        }
+    </script>
+</body>
+</html>
